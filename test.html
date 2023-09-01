@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Content Embedding</title>
+</head>
+<body>
+    <script>
+        // URL of the webpage you want to embed
+        var targetUrl = 'https://google.com';
+    
+        // Fetch the external content
+        fetch(targetUrl)
+            .then(response => response.text())
+            .then(html => {
+                // Inject the content into the container
+                document.getElementById('contentContainer').innerHTML = html;
+                
+                // You can interact with the embedded content here using JavaScript
+                // For example, you can manipulate its content, communicate with it, etc.
+            })
+            .catch(error => {
+                // Handle any errors that occur during the fetch
+                console.error('Error fetching content:', error);
+            });
+    </script>
+    
+    <div id="contentContainer">
+        <!-- The external content will be loaded here -->
+    </div>
+
+</body>
+</html>
